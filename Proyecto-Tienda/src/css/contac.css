@@ -1,0 +1,18 @@
+
+.tite{
+    font-style: oblique;
+    text-align: center;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.num{
+    text-align: center;
+}
+
+.hora{
+    text-align: center;
+}

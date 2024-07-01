@@ -1,0 +1,30 @@
+{
+    "Productos": [
+      {
+        "id": "b964",
+        "NomProducto": "Collar Victoria",
+        "precio": "8.000",
+        "material": "Oro blanco"
+      }
+    ],
+    "Usuarios": [
+      {
+        "id": "4",
+        "usuario": "vic",
+        "correo": "vic@gmail.com",
+        "contrasena": "1234"
+      },
+      {
+        "id": "9768",
+        "usuario": "hola",
+        "correo": "hola@gmail.com",
+        "contrasena": "0987"
+      },
+      {
+        "id": "c36c",
+        "usuario": "zoro",
+        "correo": "zoro@perdido.com",
+        "contrasena": "3456"
+      }
+    ]
+  }

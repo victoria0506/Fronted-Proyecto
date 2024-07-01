@@ -3,10 +3,10 @@ import { BrowserRouter as Router,Routes,Route } from "react-router-dom"
 import Registro from '../pages/registro'
 import Login from "../pages/login"
 import Home from "../pages/home"
-//import Productos from "../pages/productos"
-//import Acerca from "../pages/acerca"
-//import Contact from "../pages/contact"
-//import PrivateRoute from "./privateRoute"
+import Productos from "../pages/productos"
+import Acerca from "../pages/acerca"
+import Contact from "../pages/contact"
+import PrivateRoute from "./privateRoute"
 
 
 function routing() {
