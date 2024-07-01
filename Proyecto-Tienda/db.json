@@ -1,30 +1,38 @@
 {
-    "Productos": [
-      {
-        "id": "b964",
-        "NomProducto": "Collar Victoria",
-        "precio": "8.000",
-        "material": "Oro blanco"
-      }
-    ],
-    "Usuarios": [
-      {
-        "id": "4",
-        "usuario": "vic",
-        "correo": "vic@gmail.com",
-        "contrasena": "1234"
-      },
-      {
-        "id": "9768",
-        "usuario": "hola",
-        "correo": "hola@gmail.com",
-        "contrasena": "0987"
-      },
-      {
-        "id": "c36c",
-        "usuario": "zoro",
-        "correo": "zoro@perdido.com",
-        "contrasena": "3456"
-      }
-    ]
-  }
+  "Productos": [
+    {
+      "id": "f835",
+      "NomProducto": "bracelate",
+      "precio": "10.000",
+      "material": "plata",
+      "imgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/elsa-perettismall-bone-cuff-18384469_1012575_ED_M.jpg?defaultImage=NoImageAvailableInternal&fmt=webp"
+    },
+    {
+      "id": "be9f",
+      "NomProducto": "776776",
+      "precio": "jjkk",
+      "material": "ijioijo",
+      "imgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-victoriaearrings-11833187_1016110_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp"
+    }
+  ],
+  "Usuarios": [
+    {
+      "id": "4",
+      "usuario": "vic",
+      "correo": "vic@gmail.com",
+      "contrasena": "1234"
+    },
+    {
+      "id": "9768",
+      "usuario": "hola",
+      "correo": "hola@gmail.com",
+      "contrasena": "0987"
+    },
+    {
+      "id": "c36c",
+      "usuario": "zoro",
+      "correo": "zoro@perdido.com",
+      "contrasena": "3456"
+    }
+  ]
+}

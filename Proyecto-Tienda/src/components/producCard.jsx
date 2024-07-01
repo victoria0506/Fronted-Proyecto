@@ -16,11 +16,13 @@ const ProducCard = () => {
      <Card style={{ width: '18rem', fontFamily : "Sterling" }}>
       <Card.Img variant="top" src="https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-solestependant-60572852_1023221_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp" />
       <Card.Body>
-        <Card.Title>Pendant</Card.Title>
+        <Card.Title>Colgante</Card.Title>
         <Card.Text>
-
+          Colgante Tiffany <br />
+          $ 9.000 <br />
+          Plata
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Me gusta</Button>
       </Card.Body>
     </Card>
 
