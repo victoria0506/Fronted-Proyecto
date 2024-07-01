@@ -4,6 +4,9 @@ import postProductos from "../service/postProductos"
 import  producGET from "../service/getProductos"
 import { useEffect } from "react"
 import deleteProduc from "../service/delete"
+import putProducto from "../service/putProductos"
+import "../css/productos.css"
+
 
 const FormProductos = () => {
     const [producto, setProducto] = useState("")
@@ -11,17 +14,19 @@ const FormProductos = () => {
     const [material, setMaterial] = useState("")
     const [mensaje, setMensaje] = useState("")
     const [productos, setProductos]= useState([])
+    const [imagen, setImagen] = useState("")
 
     const AnadirProduc = async () => {
-      if (producto.trim("") === "" && precio.trim("") === "" && material.trim("") === "") {
+      if (producto.trim("") === "" && precio.trim("") === "" && material.trim("") === "" && imagen.trim("") === "") {
         setMensaje("Ingrese un texto")
         return
       }else{
-        postProductos(producto, precio, material)
+        postProductos(producto, precio, material, imagen)
         alert("Se añadio correctamente")
         setProducto("")
         setPrecio("")
         setMaterial("")
+        setImagen("")
         MostrarProduc()
       }
     }
@@ -36,9 +41,21 @@ const FormProductos = () => {
     }, []);
 
     const EliminarProduc = (id) => {
+     let confirma = confirm("Desea eliminar producto")
+     if (confirma) {
       deleteProduc(id)
       MostrarProduc()
+     } else {
+      setMensaje("El producto no se eliminara")
+     }
+
     }
+
+    const EditarProductos = async (id) => {
+      await putProducto(id)
+    }
+
+
   return (
     <div>
       <h5>{mensaje}</h5>
@@ -51,16 +68,18 @@ const FormProductos = () => {
       <label htmlFor="">Material Del producto : </label>
       <input type="text" placeholder="Material" value={material} onChange={(e) => setMaterial(e.target.value)}/>
       <br /><br />
-      <input type="file" />
+      <label htmlFor="">URL de la foto a añadir : </label>
+      <input type="text" placeholder="URL imagen" value={imagen} onChange={(e) => setImagen(e.target.value)}/>
       <br /><br />
       <button onClick={AnadirProduc}>Añadir Producto</button>
       <br /><br />
-      <div>
+      <div className="lista">
       {productos.map((produc, index) => (
             <li key={index}>
+              <img src={produc.imgUrl} alt={`${produc.NomProducto}`} style={{width:"100px"}}/>
               {produc.NomProducto} {produc.precio} {produc.material}
               <button onClick={() => EliminarProduc(produc.id)}>Eliminar</button>
-              <button>Editar</button>
+              <button>Editar Producto</button>
             </li>
       ))}
       </div>

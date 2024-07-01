@@ -1,0 +1,12 @@
+
+.lista{
+    margin-top: 1.5%;
+    list-style-type: none;  
+}
+
+img{
+    gap: 5px;
+}
+input{
+    outline: none;
+}
