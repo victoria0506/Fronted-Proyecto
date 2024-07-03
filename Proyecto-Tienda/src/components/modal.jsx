@@ -1,64 +1,84 @@
+import React, { useState, useEffect } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import putProducto from "../service/putProductos";
 
+const EditProductModal = ({ show, handleClose, product, handleSave }) => {
+  const [producto, setProducto] = useState("");
+  const [precio, setPrecio] = useState("");
+  const [material, setMaterial] = useState("");
+  const [imagen, setImagen] = useState("");
 
+  useEffect(() => {
+    if (product) {
+      setProducto(product.NomProducto);
+      setPrecio(product.precio);
+      setMaterial(product.material);
+      setImagen(product.imgUrl);
+    }
+  }, [product]);
 
-import React from 'react'
-
-export default function FormDialog() {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const saveChanges = async (id)  => {
+    const ediatado =  await putProducto(id)
+    console.log(ediatado);
+  }
 
   return (
-    <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open form dialog
-      </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        PaperProps={{
-          component: 'form',
-          onSubmit: (event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const formJson = Object.fromEntries(formData.entries());
-            const email = formJson.email;
-            console.log(email);
-            handleClose();
-          },
-        }}
-      >
-        <DialogTitle>Subscribe</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here. We
-            will send updates occasionally.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            required
-            margin="dense"
-            id="name"
-            name="email"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Subscribe</Button>
-        </DialogActions>
-      </Dialog>
-    </React.Fragment>
+    <Modal show={show} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>Editar Producto</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          <Form.Group controlId="formProducto">
+            <Form.Label>Nombre del Producto</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Producto"
+              value={producto}
+              onChange={(e) => setProducto(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group controlId="formPrecio">
+            <Form.Label>Precio del producto</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Precio"
+              value={precio}
+              onChange={(e) => setPrecio(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group controlId="formMaterial">
+            <Form.Label>Material del producto</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Material"
+              value={material}
+              onChange={(e) => setMaterial(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group controlId="formImagen">
+            <Form.Label>URL de la foto</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="URL imagen"
+              value={imagen}
+              onChange={(e) => setImagen(e.target.value)}
+            />
+          </Form.Group>
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Cerrar
+        </Button>
+        <Button variant="primary" onClick={saveChanges}>
+          Guardar cambios
+        </Button>
+      </Modal.Footer>
+    </Modal>
   );
-}
+};
 
+export default EditProductModal;
 

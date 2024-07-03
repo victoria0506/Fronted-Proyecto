@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react"
 
 function Navbari() {
+  
   const navbarStyle = { 
     backgroundColor: '#81d8d0', 
     color : "black",
