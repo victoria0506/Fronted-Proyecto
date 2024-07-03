@@ -5,8 +5,9 @@ import  producGET from "../service/getProductos"
 import { useEffect } from "react"
 import deleteProduc from "../service/delete"
 import putProducto from "../service/putProductos"
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import "../css/productos.css"
-
 
 const FormProductos = () => {
     const [producto, setProducto] = useState("")
@@ -50,17 +51,20 @@ const FormProductos = () => {
      }
 
     }
-
-    const EditarProductos = async (id) => {
-      await putProducto(id)
+    
+    const EditarProductos = async () => {
+     await putProducto(id)
     }
 
 
   return (
     <div>
+
+     <div className="form-Produc">
+      <h2>Productos</h2>
       <h5>{mensaje}</h5>
       <label htmlFor="">Nombre del Producto : </label>
-      <input type="text"  placeholder="Producto" value={producto} onChange={(e) => setProducto(e.target.value)}/>
+      <input type="text"  placeholder="Producto" value={producto} onChange={(e) => setProducto(e.target.value)} />
       <br /><br />
       <label htmlFor="">Precio del producto : </label>
       <input type="text" placeholder="Precio" value={precio} onChange={(e) => setPrecio(e.target.value)} />
@@ -73,14 +77,22 @@ const FormProductos = () => {
       <br /><br />
       <button onClick={AnadirProduc}>Añadir Producto</button>
       <br /><br />
+     </div>
       <div className="lista">
       {productos.map((produc, index) => (
-            <li key={index}>
-              <img src={produc.imgUrl} alt={`${produc.NomProducto}`} style={{width:"100px"}}/>
-              {produc.NomProducto} {produc.precio} {produc.material}
-              <button onClick={() => EliminarProduc(produc.id)}>Eliminar</button>
-              <button>Editar Producto</button>
-            </li>
+          <li key={index}> 
+              <Card style={{ width: '14rem', fontFamily : "Sterling" }}>
+                <Card.Img variant="top" src= {produc.imgUrl} />
+                <Card.Body>
+                  <Card.Title>{produc.NomProducto}</Card.Title>
+                  <Card.Text>
+                    {produc.precio}  <br /> {produc.material} <br />
+                  </Card.Text>
+                  <button onClick={() => EliminarProduc(produc.id)}>Eliminar</button>
+                  <button onClick={() => EditarProductos()}>Editar Producto</button>
+                </Card.Body>
+              </Card>
+          </li>
       ))}
       </div>
     </div>

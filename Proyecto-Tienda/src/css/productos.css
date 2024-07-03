@@ -1,12 +1,21 @@
 
 .lista{
-    margin-top: 1.5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     list-style-type: none;  
+    margin-top: 1.5%;
 }
-
+li{
+    margin-top: 1.5%;
+    background-color: white;
+    text-align: center;
+}
 img{
     gap: 5px;
 }
 input{
     outline: none;
+}
+.form-Produc{
+ text-align: center;
 }
