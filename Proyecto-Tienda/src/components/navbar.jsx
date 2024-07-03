@@ -12,7 +12,7 @@ function Navbari() {
     backgroundColor: '#81d8d0', 
     color : "black",
   }
-  const [estado, setEstado] = useState(false)
+  
   return (
    <>
      <Navbar class="navbar navbar-light" style={navbarStyle} >

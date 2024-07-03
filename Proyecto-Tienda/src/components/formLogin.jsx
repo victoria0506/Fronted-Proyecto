@@ -22,17 +22,13 @@ function Formlogin() {
         }else{
          const UserObte = await userGET()
          const validarUser = UserObte.find((user) => user.usuario === usu && user.correo === correo && user.contrasena === conta)
-         //console.log(vali);
          if (validarUser) {
             setMensaje("Logueo Exitoso")
-            //console.log("exito");
             setTimeout(() => {
                 navigate("/home")
             }, 1000);
-      
          } else {
             setMensaje("Correo o/y Contraseña incorrecto")
-            //console.log("no valido");
          }
         }
     }
