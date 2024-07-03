@@ -1,11 +1,13 @@
 
 import CarruselHome from '../components/Carrusel'
 import ProducCard from '../components/producCard'
+import CardProducNv from '../components/CardProducNv'
 
 const home = () => {
   return (
     <div>
       <CarruselHome />
+      <CardProducNv />
       <ProducCard />
     </div>
   )

@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { useEffect } from "react"
 import "../css/card.css"
 
-
 const ProducCard = () => {
   const [products, setProducts] = useState([])
 
@@ -21,8 +20,9 @@ const ProducCard = () => {
   console.log(products);
   return (
     <div>
+      <br />
       <div>
-        <h4 style={{fontFamily : "Sterling", textAlign : "center"}} >Productos Disponibles</h4>
+        <h4>Productos Disponibles</h4>
         <br />
     </div>
     <div className='productos'>
@@ -40,8 +40,8 @@ const ProducCard = () => {
           </li>
       ))}
     </div>
+
     </div>
-    
   )
 }
 

@@ -7,6 +7,7 @@ import deleteProduc from "../service/delete"
 import putProducto from "../service/putProductos"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import EditProductModal from "../components/modal"
 import "../css/productos.css"
 
 const FormProductos = () => {
@@ -16,6 +17,8 @@ const FormProductos = () => {
     const [mensaje, setMensaje] = useState("")
     const [productos, setProductos]= useState([])
     const [imagen, setImagen] = useState("")
+    const [showModal, setModal] = useState(false)
+    const [tareaEditad, setProducEdi] = useState("")
 
     const AnadirProduc = async () => {
       if (producto.trim("") === "" && precio.trim("") === "" && material.trim("") === "" && imagen.trim("") === "") {
@@ -49,13 +52,17 @@ const FormProductos = () => {
      } else {
       setMensaje("El producto no se eliminara")
      }
+    }
 
+    const abrirModal = () => {
+      setModal(true)
     }
     
     const EditarProductos = async () => {
-     await putProducto(id)
+     setProducEdi(producto)
+     setModal(false)
+     MostrarProduc()
     }
-
 
   return (
     <div>
@@ -89,12 +96,18 @@ const FormProductos = () => {
                     {produc.precio}  <br /> {produc.material} <br />
                   </Card.Text>
                   <button onClick={() => EliminarProduc(produc.id)}>Eliminar</button>
-                  <button onClick={() => EditarProductos()}>Editar Producto</button>
+                  <button onClick={() => abrirModal(produc.NomProducto)}>Editar Producto</button>
                 </Card.Body>
               </Card>
           </li>
       ))}
       </div>
+      <EditProductModal
+      show={showModal}
+      handleClose={() => setModal(false)}
+      product={tareaEditad}
+      handleSave={EditarProductos}
+      />
     </div>
   )
 }

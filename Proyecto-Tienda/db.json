@@ -1,20 +1,5 @@
 {
-  "Productos": [
-    {
-      "id": "218e",
-      "NomProducto": "aretes",
-      "precio": "10.000",
-      "material": "plata",
-      "imgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-fleur-de-liskey-bar-earrings-38051504_987049_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp"
-    },
-    {
-      "id": "899e",
-      "NomProducto": "vyhjv",
-      "precio": "889",
-      "material": "gh",
-      "imgUrl": " https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/elsa-perettiopen-heart-earrings-60957355_1022359_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp"
-    }
-  ],
+  "Productos": [],
   "Usuarios": [
     {
       "id": "4",
