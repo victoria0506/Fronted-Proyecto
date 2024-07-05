@@ -10,9 +10,15 @@ img{
 .parrafo{
     position: absolute;
     margin-right: 50%;
+    margin-top: -20%; 
 }
 .parrafo2{
     position: absolute;
     margin-right: 45%;
-    margin-top: 15%;
+    margin-top: -10px;
+}
+
+.comentario{
+    width: 20%;
+    padding: 20px;
 }

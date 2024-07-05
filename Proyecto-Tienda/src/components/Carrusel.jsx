@@ -1,10 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
+import "../css/carrusel.css"
 
 
 const CarruselHome = () => {
   return (
-    <div>
-      <br />
+    <div className='carusel'>
       <Carousel data-bs-theme="dark">
       <Carousel.Item>
         <img

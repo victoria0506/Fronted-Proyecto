@@ -4,7 +4,7 @@ const PrivateRoute = ({children}) => {
     const valiUsu = localStorage.getItem("user")
     const {state} = useLocation()
     if (!valiUsu) {
-        return state?.logged ? children : <Navigate to={"/login"} state={{logged : false}} />
+        return state?.logged ? children : <Navigate to={"/login"} />
     }
 
     return children
