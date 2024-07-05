@@ -1,5 +1,20 @@
 {
-  "Productos": [],
+  "Productos": [
+    {
+      "NomProducto": "Aros",
+      "precio": "10000",
+      "material": "acero",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/jean-schlumberger-by-tiffanysixteen-stone-ring-11715966_1073790_ED_M.jpg?defaultImage=NoImageAvailableInternal&fmt=webp",
+      "id": "4d72"
+    },
+    {
+      "NomProducto": "jjjjjj",
+      "precio": "14,000",
+      "material": "Plata",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-hardwearsmall-wrap-necklace-38172794_1029509_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp",
+      "id": "6ca4"
+    }
+  ],
   "Usuarios": [
     {
       "id": "4",

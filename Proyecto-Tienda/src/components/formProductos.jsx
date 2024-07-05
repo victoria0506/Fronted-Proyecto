@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import EditProductModal from "../components/modal"
 import "../css/productos.css"
+import { compartirContexto } from "../context/ContextProvider"
 
 const FormProductos = () => {
     const [producto, setProducto] = useState("")
@@ -19,6 +20,8 @@ const FormProductos = () => {
     const [imagen, setImagen] = useState("")
     const [showModal, setModal] = useState(false)
     const [tareaEditad, setProducEdi] = useState("")
+
+    const {actualizador, setActu, apiData, setApiData} = compartirContexto()
 
     const AnadirProduc = async () => {
       if (producto.trim("") === "" && precio.trim("") === "" && material.trim("") === "" && imagen.trim("") === "") {
@@ -42,7 +45,7 @@ const FormProductos = () => {
 
     useEffect(() => {
       MostrarProduc()
-    }, []);
+    }, [actualizador]);
 
     const EliminarProduc = (id) => {
      let confirma = confirm("Desea eliminar producto")
@@ -53,8 +56,11 @@ const FormProductos = () => {
       setMensaje("El producto no se eliminara")
      }
     }
-
-    const abrirModal = () => {
+   
+    const abrirModal = (id, imgUrl) => {
+      console.log(imgUrl);
+      localStorage.setItem("iden", id)
+      localStorage.setItem("img", imgUrl)
       setModal(true)
     }
     
@@ -62,6 +68,7 @@ const FormProductos = () => {
      setProducEdi(producto)
      setModal(false)
      MostrarProduc()
+
     }
 
   return (
@@ -82,21 +89,21 @@ const FormProductos = () => {
       <label htmlFor="">URL de la foto a añadir : </label>
       <input type="text" placeholder="URL imagen" value={imagen} onChange={(e) => setImagen(e.target.value)}/>
       <br /><br />
-      <button onClick={AnadirProduc}>Añadir Producto</button>
+      <button onClick={() => AnadirProduc()}>Añadir Producto</button>
       <br /><br />
      </div>
       <div className="lista">
       {productos.map((produc, index) => (
           <li key={index}> 
               <Card style={{ width: '14rem', fontFamily : "Sterling" }}>
-                <Card.Img variant="top" src= {produc.imgUrl} />
+                <Card.Img variant="top" src={produc.ImgUrl} />
                 <Card.Body>
                   <Card.Title>{produc.NomProducto}</Card.Title>
                   <Card.Text>
-                    {produc.precio}  <br /> {produc.material} <br />
+                    {"$ " + produc.precio}  <br /> {produc.material} <br />
                   </Card.Text>
                   <button onClick={() => EliminarProduc(produc.id)}>Eliminar</button>
-                  <button onClick={() => abrirModal(produc.NomProducto)}>Editar Producto</button>
+                  <button onClick={() => abrirModal(produc.id, produc.ImgUrl)}>Editar Producto</button>
                 </Card.Body>
               </Card>
           </li>
@@ -106,7 +113,7 @@ const FormProductos = () => {
       show={showModal}
       handleClose={() => setModal(false)}
       product={tareaEditad}
-      handleSave={EditarProductos}
+      handleSave={() => EditarProductos()}
       />
     </div>
   )

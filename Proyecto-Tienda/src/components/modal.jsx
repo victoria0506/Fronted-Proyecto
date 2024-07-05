@@ -1,34 +1,49 @@
+
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import putProducto from "../service/putProductos";
+import { compartirContexto } from "../context/ContextProvider";
 
-const EditProductModal = ({ show, handleClose, product, handleSave }) => {
+const EditProductModal = ({ show, handleClose, product}) => {
+
   const [producto, setProducto] = useState("");
   const [precio, setPrecio] = useState("");
   const [material, setMaterial] = useState("");
   const [imagen, setImagen] = useState("");
+  const [mensaje, setMensaje] = useState("")
+
+  const {actualizador, setActu, apiData, setApiData} = compartirContexto()
+
+  const datosEditados = async ()  => {
+    if (producto.trim("") !== "" || precio.trim("") !== "" || material.trim("") !== "") {
+      const id = localStorage.getItem("iden")
+      const img = localStorage.getItem("img")
+      putProducto(id, producto, precio, material, imagen)
+      setActu(actualizador + 1)
+      handleClose()
+    } else {
+      setMensaje("Ingrese los cambios a realizar")
+    }
+  }
 
   useEffect(() => {
     if (product) {
-      setProducto(product.NomProducto);
-      setPrecio(product.precio);
-      setMaterial(product.material);
-      setImagen(product.imgUrl);
+      setProducto(product.producto || "");
+      setPrecio(product.precio || "");
+      setMaterial(product.material || "");
+      setImagen(product.ImgUrl);
     }
   }, [product]);
-
-  const saveChanges = async (id)  => {
-    const ediatado =  await putProducto(id)
-    console.log(ediatado);
-  }
-
+ 
+  
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Editar Producto</Modal.Title>
       </Modal.Header>
       <Modal.Body>
+      <h3>{mensaje}</h3>
         <Form>
           <Form.Group controlId="formProducto">
             <Form.Label>Nombre del Producto</Form.Label>
@@ -72,7 +87,7 @@ const EditProductModal = ({ show, handleClose, product, handleSave }) => {
         <Button variant="secondary" onClick={handleClose}>
           Cerrar
         </Button>
-        <Button variant="primary" onClick={saveChanges}>
+        <Button variant="primary" onClick={() => datosEditados()}>
           Guardar cambios
         </Button>
       </Modal.Footer>
