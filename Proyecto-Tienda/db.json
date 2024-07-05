@@ -1,16 +1,16 @@
 {
   "Productos": [
     {
-      "NomProducto": "Aros",
-      "precio": "10000",
-      "material": "acero",
-      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/jean-schlumberger-by-tiffanysixteen-stone-ring-11715966_1073790_ED_M.jpg?defaultImage=NoImageAvailableInternal&fmt=webp",
+      "NomProducto": "Aretes",
+      "precio": "3,500",
+      "material": "Oro ",
+      "ImgUrl": " https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-fleur-de-liskey-bar-earrings-38051504_987049_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp",
       "id": "4d72"
     },
     {
-      "NomProducto": "jjjjjj",
+      "NomProducto": "cadenas",
       "precio": "14,000",
-      "material": "Plata",
+      "material": "Platino",
       "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-hardwearsmall-wrap-necklace-38172794_1029509_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp",
       "id": "6ca4"
     }
