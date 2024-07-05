@@ -16,8 +16,7 @@ const ProducCard = () => {
   useEffect(() => {
     obtenerProductos()
   }, []);
-
-  console.log(products);
+  
   return (
     <div>
       <br />
@@ -29,7 +28,7 @@ const ProducCard = () => {
        {products.map((produc, index) => (
           <li key={index}> 
             <Card style={{ width: '14rem', fontFamily : "Sterling" }}>
-              <Card.Img variant="top" src= {produc.imgUrl} />
+              <Card.Img variant="top" src= {produc.ImgUrl} />
               <Card.Body>
                 <Card.Title>{produc.NomProducto}</Card.Title>
                 <Card.Text>
@@ -40,7 +39,6 @@ const ProducCard = () => {
           </li>
       ))}
     </div>
-
     </div>
   )
 }

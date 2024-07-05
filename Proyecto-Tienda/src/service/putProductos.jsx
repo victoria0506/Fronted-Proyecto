@@ -1,4 +1,5 @@
-const putProducto = async (id, NomProducto, precio, material, ImgUrl) => { // funcion del metodo PUT
+const putProducto = async (id, NomProducto, precio, material, ImgUrl) => { 
+    console.log(ImgUrl);// funcion del metodo PUT
     try {
         const response = await fetch('http://localhost:3002/Productos/' + id, {
         method: 'PUT',
@@ -13,6 +14,7 @@ const putProducto = async (id, NomProducto, precio, material, ImgUrl) => { // fu
             })
         });
         const data = await response.json();
+        return (data)
         } catch(error) {
         console.log(error)
     } 
