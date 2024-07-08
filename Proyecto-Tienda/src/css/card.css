@@ -4,7 +4,7 @@
     grid-template-columns: repeat(4, 1fr);
     list-style-type: none;  
     margin-top: 1.5%;
-    gap: 10px;
+    gap: 20px;
 }
 
 .productos2{
@@ -20,4 +20,8 @@
 h4{
     font-Family : Sterling ;
     text-Align : center ;
+}
+
+.fecha{
+    text-align: center;
 }

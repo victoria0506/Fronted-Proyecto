@@ -4,8 +4,6 @@ import postProductos from "../service/postProductos"
 import  producGET from "../service/getProductos"
 import { useEffect } from "react"
 import deleteProduc from "../service/delete"
-import putProducto from "../service/putProductos"
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import EditProductModal from "../components/modal"
 import "../css/productos.css"
@@ -68,7 +66,6 @@ const FormProductos = () => {
      setProducEdi(producto)
      setModal(false)
      MostrarProduc()
-
     }
 
   return (
@@ -95,15 +92,17 @@ const FormProductos = () => {
       <div className="lista">
       {productos.map((produc, index) => (
           <li key={index}> 
-              <Card style={{ width: '14rem', fontFamily : "Sterling" }}>
+              <Card style={{ width: '16rem', fontFamily : "Sterling", borderColor : "#81d8d0" }}>
                 <Card.Img variant="top" src={produc.ImgUrl} />
                 <Card.Body>
                   <Card.Title>{produc.NomProducto}</Card.Title>
                   <Card.Text>
                     {"$ " + produc.precio}  <br /> {produc.material} <br />
                   </Card.Text>
-                  <button onClick={() => EliminarProduc(produc.id)}>Eliminar</button>
-                  <button onClick={() => abrirModal(produc.id, produc.ImgUrl)}>Editar Producto</button>
+                 <div className="botones">
+                 <button onClick={() => EliminarProduc(produc.id)}>Eliminar</button>
+                 <button onClick={() => abrirModal(produc.id, produc.ImgUrl)}>Editar Producto</button>
+                 </div>
                 </Card.Body>
               </Card>
           </li>

@@ -22,6 +22,7 @@ const EditProductModal = ({ show, handleClose, product}) => {
       putProducto(id, producto, precio, material, imagen)
       setActu(actualizador + 1)
       handleClose()
+      
     } else {
       setMensaje("Ingrese los cambios a realizar")
     }

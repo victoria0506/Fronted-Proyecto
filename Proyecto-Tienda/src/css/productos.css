@@ -4,6 +4,8 @@
     grid-template-columns: repeat(4, 1fr);
     list-style-type: none;  
     margin-top: 1.5%;
+    gap: 10px;
+    align-items: center;
 }
 li{
     margin-top: 1.5%;
@@ -18,4 +20,7 @@ input{
 }
 .form-Produc{
  text-align: center;
+}
+.botones{
+    gap: 10px;
 }

@@ -1,4 +1,4 @@
-const postProductos = async (NomProducto, precio, material, imgUrl ) => { // funcion del metodo POST
+const postProductos = async (NomProducto, precio, material, ImgUrl ) => { // funcion del metodo POST
     try {
         const response = await fetch('http://localhost:3002/Productos', {
         method: 'POST',
@@ -9,7 +9,7 @@ const postProductos = async (NomProducto, precio, material, imgUrl ) => { // fun
              NomProducto : NomProducto,
              precio : precio,
              material : material,
-             imgUrl : imgUrl
+             ImgUrl : ImgUrl
             })
         });
         const data = await response.json();
