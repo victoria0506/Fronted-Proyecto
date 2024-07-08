@@ -7,5 +7,26 @@
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
     font-family: Santral W01;
-    padding: 20px;
+    padding: 30px 0;
+}
+
+
+
+.iconos-redes{
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.iconos-redes li{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 15px;
+}
+p{
+    font-family: Santral W01;
+}
+
+.fecha{
+    text-align: center;
 }

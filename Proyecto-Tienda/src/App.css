@@ -1,7 +1,5 @@
 
 button{
-  display: inline-block;
-  box-sizing: border-box;
   padding: 10px;
   cursor: pointer;
   border-radius: 4px;
@@ -14,8 +12,8 @@ button{
   letter-spacing: normal;
   text-align: center;
   transition: all 0.2s ease-out;
-  size: lg;
 }
+
 a{
   text-decoration: none;
   color: white;

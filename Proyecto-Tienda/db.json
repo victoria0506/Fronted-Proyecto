@@ -1,20 +1,5 @@
 {
-  "Productos": [
-    {
-      "NomProducto": "Aretes",
-      "precio": "3,500",
-      "material": "Oro ",
-      "ImgUrl": " https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-fleur-de-liskey-bar-earrings-38051504_987049_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp",
-      "id": "4d72"
-    },
-    {
-      "NomProducto": "cadenas",
-      "precio": "14,000",
-      "material": "Platino",
-      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-hardwearsmall-wrap-necklace-38172794_1029509_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp",
-      "id": "6ca4"
-    }
-  ],
+  "Productos": [],
   "Usuarios": [
     {
       "id": "4",
