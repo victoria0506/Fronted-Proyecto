@@ -1,4 +1,5 @@
 import ComAcerca from "../components/ComAcerca"
+import CardVision from "../components/CardVisi"
 
 
 const acerca = () => {
@@ -6,6 +7,7 @@ const acerca = () => {
     <div>
       <br />
       <ComAcerca />
+      <CardVision />
       <br />
     </div>
   )
