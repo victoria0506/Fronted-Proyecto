@@ -10,8 +10,6 @@
     padding: 30px 0;
 }
 
-
-
 .iconos-redes{
     list-style-type: none;
     padding: 0;
@@ -23,10 +21,12 @@
     margin-right: 10px;
     font-size: 15px;
 }
-p{
-    font-family: Santral W01;
-}
+
 
 .fecha{
     text-align: center;
+}
+.copy{
+    font-family: Sterling Display A;
+    font-style: normal
 }

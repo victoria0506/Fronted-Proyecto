@@ -1,6 +1,7 @@
 import Routing from './routes/route'
 import Navbari from './components/navbar'
 import "./App.css"
+import Footer from "./components/footer"
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
       <div>
       <Navbari />
       <Routing />
+      <Footer />
       </div>
     </>
   )

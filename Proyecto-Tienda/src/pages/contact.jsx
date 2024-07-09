@@ -1,5 +1,6 @@
+
 import ComContacto from "../components/ComContacto"
-import FormDialog from "../components/modal"
+
 
 
 const contact = () => {

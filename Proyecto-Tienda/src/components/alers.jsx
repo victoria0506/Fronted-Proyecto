@@ -12,7 +12,6 @@ const alers = () => {
       confirmButtonText: "Si",
     }).then(async (result) => {
         if (result.isConfirmed) {
-          //Accion en caso de que elijan el SI 
         }
     });
   }

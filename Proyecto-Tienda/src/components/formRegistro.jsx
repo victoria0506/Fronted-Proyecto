@@ -10,22 +10,26 @@ function FormRegistro() {
     const [correo, setCorreo] = useState("")
     const [contraseña, setContraseña] = useState("")
     const [mensaje, setMensaje] = useState("")
+    const [UsuarioRegistrado , setUsuarioRegi] = useState([])
     const navigate = useNavigate();
 
 const mostrar = async ()=>{
-    
+
     if (usuario.trim("") === "" && contraseña.trim("") === "" && correo.trim("") === "") {
         setMensaje("Ingrese un texto")
         return
-    }else{
-        AddPost(usuario, correo, contraseña)
-        setMensaje("registro exitoso")
-        setTimeout(() => {
-          navigate("/login")
-      }, 1000);
     }
+    const UsurioExite = UsuarioRegistrado.find(user => user.correo === correo && user.contrasena === contraseña)
+    if (UsurioExite) {
+      AddPost(usuario, correo, contraseña)
+      setMensaje("registro exitoso")
+      setTimeout(() => {
+        navigate("/login")
+    }, 1000);
+    }else{
+    setMensaje("El correo/contraseña ya se encuentran registrados")
+  }
 }
-
   return (
     <div className="login4">
        <div className="logn6">

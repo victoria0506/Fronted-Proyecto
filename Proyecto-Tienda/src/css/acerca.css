@@ -22,3 +22,22 @@ img{
     width: 20%;
     padding: 20px;
 }
+
+.vision{
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    text-align: center;
+    margin-top: 10%;
+}
+
+.cardVision{
+    margin-left: 50%;
+}
+.cardMision{
+    margin-left: 40%;
+}
+.colorHe{
+    background-color: black;
+    color: white;
+    font-family: Santral W01;
+}

@@ -1,5 +1,62 @@
 {
-  "Productos": [],
+  "Productos": [
+    {
+      "id": "fc96",
+      "NomProducto": "Rose Broch",
+      "precio": "7,500",
+      "material": "Oro ",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/elsa-perettiamapola-brooch-10665892_867527_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp"
+    },
+    {
+      "id": "91a0",
+      "NomProducto": "ゲイリーリング",
+      "precio": "10,000",
+      "material": "Platino-Oro",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/jean-schlumberger-by-tiffanysixteen-stone-ring-11715966_1073790_ED_M.jpg?defaultImage=NoImageAvailableInternal&fmt=webp"
+    },
+    {
+      "id": "99d9",
+      "NomProducto": "Pulsera ",
+      "precio": "4,300",
+      "material": "Plata",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-forgelink-bracelet-73229634_1063566_ED_M.jpg?&op_usm=1.0,1.0,6.0&$cropN=0.1,0.1,0.8,0.8&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp"
+    },
+    {
+      "id": "32ba",
+      "NomProducto": "Cadena ",
+      "precio": "9,200",
+      "material": "Oro rosa",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-victoriapendant-32948219_997905_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp"
+    },
+    {
+      "id": "5c2d",
+      "NomProducto": "Pendientes",
+      "precio": "29,600",
+      "material": "Diamantes-Platino",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-victoriadiamond-vine-drop-earrings-in-platinum-66886328_1044350_ED.jpg?&op_usm=2.0,1.0,6.0&$cropN=0.1,0.1,0.8,0.8&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp"
+    },
+    {
+      "id": "1991",
+      "NomProducto": "Vine Anillo",
+      "precio": "19,300",
+      "material": "Planito- Piedra Tanzanita",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-victoriavine-ring-68268125_1025699_ED_M.jpg?&op_usm=1.75,1.0,6.0&$cropN=0.1,0.1,0.8,0.8&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp"
+    },
+    {
+      "id": "7fd6",
+      "NomProducto": "Pulsera Perlas",
+      "precio": "16,900",
+      "material": "Platino-Diamantes-Perlas",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-victoriatennis-bracelet-38051148_1013535_ED.jpg?defaultImage=NoImageAvailableInternal&fmt=webp"
+    },
+    {
+      "id": "eaec",
+      "NomProducto": "Diadema ",
+      "precio": "7,800",
+      "material": "Platino-Diamantes",
+      "ImgUrl": "https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-victoriadiamond-vine-headband-in-platinum-67989546_1007978_ED.jpg?&op_usm=1.0,1.0,6.0&$cropN=0.1,0.1,0.8,0.8&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp"
+    }
+  ],
   "Usuarios": [
     {
       "id": "4",
