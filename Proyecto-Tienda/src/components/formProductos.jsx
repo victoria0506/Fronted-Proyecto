@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 import EditProductModal from "../components/modal"
 import "../css/productos.css"
 import { compartirContexto } from "../context/ContextProvider"
+import swal from 'sweetalert';
 
 const FormProductos = () => {
     const [producto, setProducto] = useState("")
@@ -18,7 +19,6 @@ const FormProductos = () => {
     const [imagen, setImagen] = useState("")
     const [showModal, setModal] = useState(false)
     const [tareaEditad, setProducEdi] = useState("")
-
     const {actualizador, setActu, apiData, setApiData} = compartirContexto()
 
     const AnadirProduc = async () => {
@@ -45,15 +45,36 @@ const FormProductos = () => {
       MostrarProduc()
     }, [actualizador]);
 
+    
     const EliminarProduc = (id) => {
-     let confirma = confirm("Desea eliminar producto")
-     if (confirma) {
-      deleteProduc(id)
-      MostrarProduc()
-     } else {
-      setMensaje("El producto no se eliminara")
-     }
-    }
+      swal({
+          title: "¿Estás seguro?",
+          text: "No podrás revertir esto!",
+          icon: "warning",
+          buttons: {
+              cancel: {
+                  text: "No, cancelar",
+                  visible: true,
+                  className: "btn btn-danger",
+                  closeModal: true,
+              },
+              confirm: {
+                  text: "Sí, eliminarlo!",
+                  className: "btn btn-success",
+                  closeModal: true,
+              },
+          },
+          dangerMode: true,
+      }).then((willDelete) => {
+          if (willDelete) {
+              deleteProduc(id);
+              MostrarProduc();
+              swal("¡Eliminado!", "El producto ha sido eliminado.", "success");
+          } else {
+              swal("Cancelado", "Tu producto está seguro :)", "error");
+          }
+      });
+  };
    
     const abrirModal = (id, imgUrl) => {
       console.log(imgUrl);

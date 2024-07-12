@@ -1,22 +1,50 @@
 
-.tite{
-    font-style: oblique;
+.Contenedor-contact{
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.contenedor{
+.Diseño-contec{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
-}
-.num{
-    text-align: center;
+    padding: 10px;
 }
 
-.hora{
-    text-align: center;
+.form-contac h4{
+    margin-bottom: 10px;
 }
 
-.form-contac{
-    text-align: center;
+.form-contact input{
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid;
+}
+
+.form-contact button {
+    padding: 10px 20px;
+    background-color: #81d8d0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-contact button:hover {
+    background-color: #81d8d0;
+}
+
+.info-contact h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+  
+.horarios{
+    font-family: Santral W01;
+}
+  
+.iconos{
+    display: flex
 }

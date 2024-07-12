@@ -1,7 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import "../css/carrusel.css"
 
-
 const CarruselHome = () => {
   return (
     <div className='carusel'>
@@ -34,7 +33,8 @@ const CarruselHome = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    <br /><br />
+    
+    <br />
     </div>
   )
 }
