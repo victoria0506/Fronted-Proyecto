@@ -17,6 +17,7 @@ const putProducto = async (id, NomProducto, precio, material, ImgUrl) => {
         return (data)
         } catch(error) {
         console.log(error)
+        alert("Error del servidor, por favor intente después")
     } 
 }
 

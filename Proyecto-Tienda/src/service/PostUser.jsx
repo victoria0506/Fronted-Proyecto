@@ -17,6 +17,7 @@ const AddPost = async (usuario, correo,contrasena) => { // funcion del metodo PO
         return data
         } catch(error) {
         console.log(error)
+        alert("Error del servidor, por favor intente después")
     } 
 }
 

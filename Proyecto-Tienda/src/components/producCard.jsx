@@ -7,14 +7,14 @@ import { useEffect } from "react"
 import "../css/card.css"
 
 const ProducCard = () => {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]) // hook que almacenara la lista de productos
 
-  const obtenerProductos  = async ()  => {
-     const productosObtenidos = await producGET()
-    setProducts(productosObtenidos)
+  const obtenerProductos  = async ()  => { // funcion del metdo GET
+     const productosObtenidos = await producGET() 
+    setProducts(productosObtenidos) // le cambiamos el estado
   }
   useEffect(() => {
-    obtenerProductos()
+    obtenerProductos() 
   }, []);
   
   return (
@@ -25,6 +25,7 @@ const ProducCard = () => {
         <br />
     </div>
     <div className='productos'>
+      {/* .map para recorrer y añadir los productos a la pagina home*/}
        {products.map((produc, index) => (
           <li key={index}> 
             <Card style={{ width: '14rem', fontFamily : "Sterling" }}>
