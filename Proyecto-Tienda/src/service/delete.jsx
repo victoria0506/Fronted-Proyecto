@@ -11,6 +11,7 @@ const deleteProduc = async (id) => {
         return(data)
         } catch(error) {
         console.log(error)
+        alert("Error del servidor al eliminar el producto")
     } 
 }
 export default deleteProduc

@@ -3,29 +3,28 @@ import '../css/navbar.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-//import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import { compartirContexto } from "../context/ContextProvider"
 
 function Navbari() {
-  const {actualizador, setActu, apiData, setApiData} = compartirContexto()
+  const {actualizador, setActu, apiData, setApiData} = compartirContexto() // hoook del Usecontext 
   
-  const [boton, setBoton] = useState("none")
+  const [boton, setBoton] = useState("none") // estado del las paginas productos y cerrar sesion
 
-  useEffect(() => {
-    if (localStorage.getItem("Admi-id") === "Admi") {
+  useEffect(() => { // Se actualiza el estado de boton
+    if (localStorage.getItem("Admi-id") === "Admi") { // si en el localStorage almacena a admi el estsdo de boton va hacer block
       setBoton("block")
     } else {
-      setBoton("none")
+      setBoton("none") // si no none
     }
-  }, [actualizador])
+  }, [actualizador])// actualizamos el contexto
 
   function quitar() {
-    localStorage.removeItem("Admi-id")
+    localStorage.removeItem("Admi-id") // se quita lo almacenado en localStorage
   }
 
-  const navbarStyle = { 
+  const navbarStyle = { // funcion para cambiar color del nav
     backgroundColor: '#81d8d0', 
     color : "black",
   }

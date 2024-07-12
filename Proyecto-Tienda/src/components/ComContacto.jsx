@@ -8,23 +8,23 @@ const ComContacto = () => {
   const [comentario, setComentario] = useState("")
   const [swalProps, setSwalProps] = useState({});
         
-  function MjsContac() {
+  function MjsContac() { 
 
-    if (correo.trim("") !== "" && comentario.trim("") !== "") {
-       setSwalProps({
+    if (correo.trim("") !== "" && comentario.trim("") !== "") { //Validacion para que el usuario no envie datos vacios 
+       setSwalProps({ //SweetAlert para indicarle al usuraio que su mensaje fue enviado con exito
             show: true,
             title: 'Mensaje enviado correctamenta',
             text: 'Gracias por su comentario',
         });
     } else {
-      setSwalProps({
+      setSwalProps({ //SweetAlert para indicar al usuario que necesita ingresar sus datos y el mensaje
         show: true,
         title: 'Error',
-        text: 'Ingrese sus datos',
+        text: 'Ingrese sus datos y el mensaje a enviar',
     });
     }
   }
-  
+
   return (
     <div className='Contenedor-contact'> 
       <div className='Diseño-contec'>

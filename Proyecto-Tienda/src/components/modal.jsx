@@ -15,7 +15,7 @@ const EditProductModal = ({ show, handleClose, product}) => {
 
   const {actualizador, setActu, apiData, setApiData} = compartirContexto()
   
-  useEffect(() => {
+  useEffect(() => {// Actualiza los estados al abrir el modal con los datos del producto
     if (product) {
       setProducto(product.producto || "");
       setPrecio(product.precio || "");
@@ -24,15 +24,15 @@ const EditProductModal = ({ show, handleClose, product}) => {
     }
   }, [product]);
 
-  const datosEditados = async ()  => {
+  const datosEditados = async ()  => {  //Guarda los cambios editados del producto
     if (producto.trim("") !== "" || precio.trim("") !== "" || material.trim("") !== "") {
       const id = localStorage.getItem("iden")
-      putProducto(id, producto, precio, material, imagen)
-      setActu(actualizador + 1)
-      handleClose()
+      putProducto(id, producto, precio, material, imagen) // se llama al medoto PUT para actualizar 
+      setActu(actualizador + 1) // se actualiza el contexto para ver los cambios
+      handleClose()// cierra el modal
       
     } else {
-      setMensaje("Ingrese los cambios a realizar")
+      setMensaje("Ingrese los cambios a realizar") // validar estacios vacios, informamos al administrador
     }
   }
 

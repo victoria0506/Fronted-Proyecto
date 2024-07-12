@@ -10,6 +10,7 @@ const userGET = async () => { // funcion del metodo GET
         return(data)
         } catch(error) {
         console.log(error)
+        alert("Error del servidor, por favor intente después")
     } 
 }
 

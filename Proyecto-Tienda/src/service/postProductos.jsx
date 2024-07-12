@@ -16,6 +16,7 @@ const postProductos = async (NomProducto, precio, material, ImgUrl ) => { // fun
         return data
         } catch(error) {
         console.log(error)
+        alert("Error del servidor al agregar")
     } 
 }
 

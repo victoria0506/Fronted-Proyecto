@@ -8,35 +8,36 @@ import userGET from "../service/getUser"
 
 function FormRegistro() {
 
+  // declaramos los hooks
     const [usuario, setUsuario] = useState("")
     const [correo, setCorreo] = useState("")
     const [contraseña, setContraseña] = useState("")
     const [mensaje, setMensaje] = useState("")
     const [swalProps, setSwalProps] = useState({});
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // hookpara navegar entre paginas
 
 const mostrar = async ()=>{
-    if (usuario.trim("") === "" && contraseña.trim("") === "" && correo.trim("") === "") {
-        setSwalProps({
+    if (usuario.trim("") === "" && contraseña.trim("") === "" && correo.trim("") === "") { // validacion de espacios vacios
+        setSwalProps({ // SweetAlert para informar al usuario
           show: true,
           title: 'Error',
           text: 'Ingrese sus datos',
       });
         return
     }
-    const UserObte = await userGET()
-    const validarRegistro = UserObte.find(user => user.correo === correo && user.contrasena === contraseña)
-    if (validarRegistro) {
+    const UserObte = await userGET() // metdo GET para extraer los usuraios ya registrados 
+    const validarRegistro = UserObte.find(user => user.correo === correo && user.contrasena === contraseña)// buscamos a las usurios por el correo y la contraseña
+    if (validarRegistro) { // si ya esta registrado se envia una alerta para informar al usuraio
       setSwalProps({
         show: true,
         title: 'Error',
         text: 'El correo/contraseña ya se encuentran registrados',
     });
     }else{
-    AddPost(usuario, correo, contraseña)
-    setMensaje("Registro exitoso")
+    AddPost(usuario, correo, contraseña) // si no, se hace el post y se registra correctamente
+    setMensaje("Registro exitoso") // se le envia un mensaje de registro exitoso
     setTimeout(() => {
-      navigate("/login")
+      navigate("/login") // se envia al login despues de un segundo
   }, 1000);
   }
 }
