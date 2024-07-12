@@ -14,11 +14,19 @@ const EditProductModal = ({ show, handleClose, product}) => {
   const [mensaje, setMensaje] = useState("")
 
   const {actualizador, setActu, apiData, setApiData} = compartirContexto()
+  
+  useEffect(() => {
+    if (product) {
+      setProducto(product.producto || "");
+      setPrecio(product.precio || "");
+      setMaterial(product.material || "");
+      setImagen(product.ImgUrl || "");
+    }
+  }, [product]);
 
   const datosEditados = async ()  => {
     if (producto.trim("") !== "" || precio.trim("") !== "" || material.trim("") !== "") {
       const id = localStorage.getItem("iden")
-      const img = localStorage.getItem("img")
       putProducto(id, producto, precio, material, imagen)
       setActu(actualizador + 1)
       handleClose()
@@ -28,16 +36,6 @@ const EditProductModal = ({ show, handleClose, product}) => {
     }
   }
 
-  useEffect(() => {
-    if (product) {
-      setProducto(product.producto || "");
-      setPrecio(product.precio || "");
-      setMaterial(product.material || "");
-      setImagen(product.ImgUrl);
-    }
-  }, [product]);
- 
-  
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -52,7 +50,8 @@ const EditProductModal = ({ show, handleClose, product}) => {
               type="text"
               placeholder="Producto"
               value={producto}
-              onChange={(e) => setProducto(e.target.value)}
+              onChange = {(e) => setProducto(e.target.value)}
+              required
             />
           </Form.Group>
           <Form.Group controlId="formPrecio">
@@ -60,8 +59,9 @@ const EditProductModal = ({ show, handleClose, product}) => {
             <Form.Control
               type="text"
               placeholder="Precio"
-              value={precio}
+              value={precio.precio}
               onChange={(e) => setPrecio(e.target.value)}
+              required
             />
           </Form.Group>
           <Form.Group controlId="formMaterial">
@@ -71,6 +71,7 @@ const EditProductModal = ({ show, handleClose, product}) => {
               placeholder="Material"
               value={material}
               onChange={(e) => setMaterial(e.target.value)}
+              required
             />
           </Form.Group>
           <Form.Group controlId="formImagen">
@@ -80,6 +81,7 @@ const EditProductModal = ({ show, handleClose, product}) => {
               placeholder="URL imagen"
               value={imagen}
               onChange={(e) => setImagen(e.target.value)}
+              required
             />
           </Form.Group>
         </Form>

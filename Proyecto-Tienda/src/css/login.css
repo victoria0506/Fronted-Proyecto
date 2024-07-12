@@ -23,3 +23,6 @@
     border-bottom: 1px solid #767676;
     outline: none;
 }
+.botones{
+    display: grid;
+}

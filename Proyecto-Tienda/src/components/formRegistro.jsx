@@ -1,8 +1,10 @@
-import {useState } from "react"
+import {useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import AddPost from "../service/PostUser"
 import { useNavigate } from "react-router-dom"
 import "../css/registro.css"
+import SweetAlert2 from 'react-sweetalert2';
+import userGET from "../service/getUser"
 
 function FormRegistro() {
 
@@ -10,24 +12,32 @@ function FormRegistro() {
     const [correo, setCorreo] = useState("")
     const [contraseña, setContraseña] = useState("")
     const [mensaje, setMensaje] = useState("")
-    const [UsuarioRegistrado , setUsuarioRegi] = useState([])
+    const [swalProps, setSwalProps] = useState({});
     const navigate = useNavigate();
 
 const mostrar = async ()=>{
-
     if (usuario.trim("") === "" && contraseña.trim("") === "" && correo.trim("") === "") {
-        setMensaje("Ingrese un texto")
+        setSwalProps({
+          show: true,
+          title: 'Error',
+          text: 'Ingrese sus datos',
+      });
         return
     }
-    const UsurioExite = UsuarioRegistrado.find(user => user.correo === correo && user.contrasena === contraseña)
-    if (UsurioExite) {
-      AddPost(usuario, correo, contraseña)
-      setMensaje("registro exitoso")
-      setTimeout(() => {
-        navigate("/login")
-    }, 1000);
+    const UserObte = await userGET()
+    const validarRegistro = UserObte.find(user => user.correo === correo && user.contrasena === contraseña)
+    if (validarRegistro) {
+      setSwalProps({
+        show: true,
+        title: 'Error',
+        text: 'El correo/contraseña ya se encuentran registrados',
+    });
     }else{
-    setMensaje("El correo/contraseña ya se encuentran registrados")
+    AddPost(usuario, correo, contraseña)
+    setMensaje("Registro exitoso")
+    setTimeout(() => {
+      navigate("/login")
+  }, 1000);
   }
 }
   return (
@@ -44,12 +54,16 @@ const mostrar = async ()=>{
         <label htmlFor="">contraseña : </label>
         <input type="text" className="inRegi" value={contraseña} onChange={e => setContraseña(e.target.value)} placeholder="Contraseña"/>
         <br /><br />
+        <div className="botones">
         <button onClick={mostrar}>Registar Usuario</button>
-        <br /><br />
         <button><Link to='/login'>Ir al login</Link></button>
+        </div>
+       </div>
+       <div>
+       <SweetAlert2 {...swalProps} />
        </div>
     </div>
+    
   )
 }
-
-export default FormRegistro
+export default FormRegistro  

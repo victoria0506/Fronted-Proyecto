@@ -32,7 +32,7 @@ const ProducCard = () => {
               <Card.Body>
                 <Card.Title>{produc.NomProducto}</Card.Title>
                 <Card.Text>
-                  {produc.precio}  <br /> {produc.material} <br />
+                  {"$ " + produc.precio}  <br /> {produc.material} <br />
                 </Card.Text>
               </Card.Body>
             </Card>

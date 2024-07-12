@@ -7,10 +7,13 @@ const CardVision = () => {
         <Card className='cardVision' border="secondary" style={{ width: '25rem' }}>
         <Card.Header className='colorHe'>Vision</Card.Header>
         <Card.Body>
-          <Card.Title>Secondary Card Title</Card.Title>
+          <Card.Title></Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          En Eternal Jewelry, nos dedicamos a ofrecer joyas únicas y 
+          de alta calidad que resalten la belleza y la individualidad de cada persona.
+          Nos comprometemos a proporcionar a nuestros clientes
+          una experiencia excepcional de compra en línea, garantizando 
+          la autenticidad, la artesanía experta y el servicio al cliente de primera clase.
           </Card.Text>
         </Card.Body>
       </Card>
@@ -18,15 +21,16 @@ const CardVision = () => {
       <Card className='cardMision' border="secondary" style={{ width: '25rem' }}>
         <Card.Header className='colorHe'>Mision</Card.Header>
         <Card.Body>
-          <Card.Title>Secondary Card Title</Card.Title>
+          <Card.Title></Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          Nos visualizamos como la primera opción en joyería en línea, 
+          conocida por nuestra colección diversa y exclusiva que captura las últimas tendencias y 
+          estilos atemporales. Nos esforzamos por expandir nuestra presencia global, 
+          manteniendo siempre nuestra pasión por la excelencia en diseño y servicio.
           </Card.Text>
         </Card.Body>
       </Card>
     </div>
   )
 }
-
 export default CardVision

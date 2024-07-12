@@ -16,12 +16,11 @@
     margin: 10px 0 0;
 }
 
-.iconos-redes li{
-    display: inline-block;
+.iconos-redes li p{
+    display: inline;
     margin-right: 10px;
     font-size: 15px;
 }
-
 
 .fecha{
     text-align: center;
